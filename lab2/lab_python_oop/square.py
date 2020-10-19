@@ -4,12 +4,15 @@ from lab_python_oop.figure_color import Color
 class Square(Rectangle):
     figureType = "Квадрат"
 
+    @classmethod
+    def getFigureType(cls):
+        return cls.figureType
+
     def __init__ (self, sideLength, colorName):
         self._color = Color(colorName)
-        self._width = sideLength
-        self._height = sideLength
+        super().__init__(sideLength, sideLength, colorName)
 
     def __repr__(self):
-        return f"{self.figureType} {self._color.colorValue} цвета со стороной {self._width}."
+        return f"{Square.getFigureType()} {self._color.colorValue} цвета со стороной {self._width}."
     pass
     

@@ -5,9 +5,9 @@ from numpy import euler_gamma
 
 
 if (__name__ == "__main__"):
-    rectangle = Rectangle(10, 20, "фиолетового")
-    square = Square(10, "чёрного")
-    circle = Circle(5, "красного")
+    rectangle = Rectangle(3, 3, "синего")
+    circle = Circle(3, "зелёного")
+    square = Square(3, "красного")
 
     print (rectangle)
     print (square)

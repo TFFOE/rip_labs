@@ -4,6 +4,10 @@ from lab_python_oop.figure_color import Color
 class Rectangle(Figure):
     figureType = "Прямоугольник"
 
+    @classmethod
+    def getFigureType(cls):
+        return cls.figureType
+
     def __init__(self, width, height, colorName):
         self._width = width
         self._height = height
@@ -13,4 +17,4 @@ class Rectangle(Figure):
         return self._width * self._height
 
     def __repr__(self):
-        return f"{self.figureType} {self._color.colorValue} цвета шириной {self._width} и высотой {self._height}."
+        return f"{Rectangle.getFigureType()} {self._color.colorValue} цвета шириной {self._width} и высотой {self._height}."
