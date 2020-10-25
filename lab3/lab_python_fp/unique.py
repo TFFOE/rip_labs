@@ -5,11 +5,9 @@ class Unique(object):
         self.used = set()
         self.index = 0
         self.items = items if type(items) is list else [i for i in items]
-        self.ignore_case = True if len(
-            kwargs) > 0 and kwargs['ignore_case'] == True else False
+        self.ignore_case = True if len(kwargs) > 0 and kwargs['ignore_case'] == True else False
 
     def __next__(self):
-
         while True:
             if (self.index >= len(self.items)):
                 raise StopIteration
