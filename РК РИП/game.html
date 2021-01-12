@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel = "stylesheet" href = "game_style.css">
+		<title>Жми на желтый</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+	</head>
+	<script>
+		var _score = 0;
+		function getRandom() {
+			return Math.random() * (10);
+		}
+	</script>
+	<body>
+		<ul>
+			<li>
+				<table id = "game">
+					<tr><td></td><td><div onClick = "cmon()"></div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				</table>
+			</li>
+			<li>
+				<div class = "scoreboard">SCORE:<span id = "score">0</span></div>
+			</li>
+		</ul>
+		<script>
+			if (document.documentElement.clientWidth>document.documentElement.clientHeight)
+			{
+				game.classList.add("_height")
+			}
+
+			var new_div = document.createElement("div");
+			new_div.onclick = cmon;
+			function cmon()
+			{
+			document.getElementsByTagName("div")[0].parentNode.removeChild(document.getElementsByTagName("div")[0]);
+			var a = Math.trunc(getRandom());
+			var b = Math.trunc(getRandom());
+			_score++;
+			score.innerHTML = _score;
+			document.getElementsByTagName("tr")[a].childNodes[b].appendChild(new_div);
+			}
+		</script>
+
+	</body>
+</html>
